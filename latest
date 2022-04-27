@@ -3,10 +3,12 @@
 
 xrc:mod ws/lib/main
 
+x ws env set
 ___x_cmd_ws(){
     case "$1" in
         run)        shift; ___x_cmd_ws_run "$@" ;;
         root)       ___x_cmd_ws_root ;;
+        env)        shift; ___x_cmd_ws_env "$@" ;;
         *)          ___x_cmd_ws_run "$@" ;;
     esac
 }
