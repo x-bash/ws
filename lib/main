@@ -17,7 +17,6 @@ ___x_cmd_wsroot(){
 
 ___x_cmd_ws(){
     x:trace x/ws
-    local X_DISABLE_WORKSPACE_EXECUTION_CONFIRMATION=1
 
     local TGT
 
@@ -45,8 +44,6 @@ ___x_cmd_ws(){
 }
 
 ___x_cmd__ws(){
-    local X_DISABLE_WORKSPACE_EXECUTION_CONFIRMATION=1
-
     local RESOURCE_NAME="$1"; shift
 
     local TGT
@@ -67,27 +64,6 @@ ___x_cmd_exe_workspace(){
     if [ -L "$filepath" ]; then
         filepath="$(___x_cmd_readlink_recursive "$filepath")"
         filepath="$(___x_cmd_abspath "$filepath")"
-    fi
-
-    # TODO: notice. Filepath should be colorized and emphasized.
-    # TODO: Hit enter twise will ignore this. But really, should we add this protection?
-    if [ -z "$X_DISABLE_WORKSPACE_EXECUTION_CONFIRMATION" ]; then
-        while true; do
-            printf "%s" \
-"=> Running file: $filepath ?
-=> Enter or press y to continue, n to abort. default is y: " >&2
-
-            read -r action
-            case $action in
-                n|no|nein|ne)  cat >&2 <<A
-=> You could run the file by yourself:
-\033[32m    x \"$filepath\" \033[;0m
-A
-                    return 1
-                    ;;
-                ""|y)            printf "%s\n" "";     break ;;
-            esac
-        done
     fi
 
     shift
