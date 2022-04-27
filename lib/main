@@ -1,21 +1,6 @@
 
 
-___x_cmd_wsroot(){
-    local cur="${1:-.}"
-
-    cur="$(cd "$cur" 1>/dev/null 2>&1 && pwd)"
-
-    while [ ! "$cur" = "" ]; do
-        if [ -d "$cur/.x-cmd" ]; then
-            printf "%s" "$cur"
-            return 0
-        fi
-        cur=${cur%/*}
-    done
-    return 1
-}
-
-___x_cmd_ws(){
+___x_cmd_ws_run(){
     x:trace x/ws
 
     local TGT
@@ -41,6 +26,21 @@ ___x_cmd_ws(){
         printf "Workspace Resource Not found: %s\n" "$RESOURCE_NAME" >&2
         return 1
     fi
+}
+
+___x_cmd_ws_root(){
+    local cur="${1:-.}"
+
+    cur="$(cd "$cur" 1>/dev/null 2>&1 && pwd)"
+
+    while [ ! "$cur" = "" ]; do
+        if [ -d "$cur/.x-cmd" ]; then
+            printf "%s" "$cur"
+            return 0
+        fi
+        cur=${cur%/*}
+    done
+    return 1
 }
 
 ___x_cmd__ws(){
