@@ -85,7 +85,11 @@ A
 # EndSection
 
 ___x_cmd_ws_root(){
-    cd "${1:-.}" 1>/dev/null 2>&1 && local cur="${PWD}" && cd "$OLDPWD" || return
+    if [ "${1:-.}" = . ]; then
+        local cur="$PWD"
+    else
+        cd "${1:-.}" 2>&1 && local cur="${PWD}" && cd "$OLDPWD" || return
+    fi
 
     while [ ! "$cur" = "" ]; do
         if [ -d "$cur/.x-cmd" ]; then
