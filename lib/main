@@ -87,11 +87,8 @@ A
 
 # EndSection
 
-
 ___x_cmd_ws_root(){
-    local cur="${1:-.}"
-
-    cur="$(cd "$cur" 1>/dev/null 2>&1 && pwd)"
+    cd "${1:-.}" 1>/dev/null 2>&1 && local cur="${PWD}" && cd "$OLDPWD" || return
 
     while [ ! "$cur" = "" ]; do
         if [ -d "$cur/.x-cmd" ]; then
@@ -102,4 +99,3 @@ ___x_cmd_ws_root(){
     done
     return 1
 }
-
