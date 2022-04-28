@@ -12,3 +12,5 @@ ___x_cmd_ws(){
         *)          ___x_cmd_ws_run "$@" ;;
     esac
 }
+
+xrc setmain ___x_cmd_ws
