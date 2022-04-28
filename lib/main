@@ -92,7 +92,7 @@ ___x_cmd_ws_root(){
 
     while [ ! "$cur" = "" ]; do
         if [ -d "$cur/.x-cmd" ]; then
-            printf "%s" "$cur"
+            printf "%s\n" "$cur"
             return 0
         fi
         cur=${cur%/*}
