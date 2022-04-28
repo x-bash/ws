@@ -3,7 +3,7 @@
 
 xrc:mod ws/lib/main ws/lib/hook
 
-x ws env set
+# x ws env set
 ___x_cmd_ws(){
     case "$1" in
         run)        shift; ___x_cmd_ws_run "$@" ;;
