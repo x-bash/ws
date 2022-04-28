@@ -2,11 +2,9 @@
 ___x_cmd_ws_run(){
     x:trace x/ws
 
-    local TGT
-
     if [ -z "$1" ]; then
-        if TGT="$(___x_cmd_search_path . ".x-cmd/ws")"; then
-            ___x_cmd_exe_workspace "$TGT/.x-cmd/ws"
+        if ___x_cmd_search_path_ . ".x-cmd/ws"; then
+            ___x_cmd_exe_workspace "$___X_CMD_SEARCH_PATH_RESULT/.x-cmd/ws"
             return
         else
             printf "%s\n" "Cannot find .x-cmd/ws" >&2
@@ -15,11 +13,11 @@ ___x_cmd_ws_run(){
     fi
 
     local RESOURCE_NAME="$1"; shift
-    if TGT="$(___x_cmd_search_path . ".x-cmd/ws")"; then
-        ___x_cmd_exe_workspace "$TGT/.x-cmd/ws" "$RESOURCE_NAME" "$@"
+    if ___x_cmd_search_path_ . ".x-cmd/ws"; then
+        ___x_cmd_exe_workspace "$___X_CMD_SEARCH_PATH_RESULT/.x-cmd/ws" "$RESOURCE_NAME" "$@"
         return
-    elif TGT="$(___x_cmd_search_path . ".x-cmd/$RESOURCE_NAME")"; then
-        ___x_cmd_exe_workspace "$TGT/.x-cmd/$RESOURCE_NAME" "$@"
+    elif ___x_cmd_search_path_ . ".x-cmd/$RESOURCE_NAME"; then
+        ___x_cmd_exe_workspace "$___X_CMD_SEARCH_PATH_RESULT/.x-cmd/$RESOURCE_NAME" "$@"
         return
     else
         printf "Workspace Resource Not found: %s\n" "$RESOURCE_NAME" >&2
@@ -30,9 +28,8 @@ ___x_cmd_ws_run(){
 ___x_cmd__ws(){
     local RESOURCE_NAME="$1"; shift
 
-    local TGT
-    if TGT="$(___x_cmd_search_path . ".x-cmd/$RESOURCE_NAME")"; then
-        ___x_cmd_exe_workspace "$TGT/.x-cmd/$RESOURCE_NAME" "$@"
+    if ___x_cmd_search_path_ . ".x-cmd/$RESOURCE_NAME"; then
+        ___x_cmd_exe_workspace "$___X_CMD_SEARCH_PATH_RESULT/.x-cmd/$RESOURCE_NAME" "$@"
         return
     else
         printf "Workspace Resource Not found: %s\n" "$RESOURCE_NAME" >&2
