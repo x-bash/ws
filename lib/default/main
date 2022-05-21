@@ -13,7 +13,7 @@ ___x_cmd_ws___exe_default(){
             elif [ -f "$(___x_cmd_ws_root)/tsconfig.json" ]; then
                 ___X_CMD_WS___EXE_DEFAULT_TMP=typescript
             elif [ -f "$(___x_cmd_ws_root)/package.json" ]; then
-                ___X_CMD_WS___EXE_DEFAULT_TMP=nodejs
+                ___X_CMD_WS___EXE_DEFAULT_TMP=node
             elif [ -f "$(___x_cmd_ws_root)/gosum" ]; then
                 ___X_CMD_WS___EXE_DEFAULT_TMP=go
             else
