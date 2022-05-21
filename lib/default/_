@@ -1,4 +1,4 @@
-
+# shellcheck shell=sh   disable=SC3043,SC1090,SC1091
 xrc:mod:lib ws      default/util
 
 if [ -f "$(___x_cmd_ws_root)/setup.py" ]; then
@@ -19,7 +19,6 @@ else
     ws:error "No default script found in this environment."
 fi
 
-# shellcheck disable=SC1090
 [ -z "$___X_CMD_WS___EXE_DEFAULT_TMP" ] || . "$___X_CMD_ROOT_MOD/ws/lib/default/$___X_CMD_WS___EXE_DEFAULT_TMP/_" "$@"
 
 
