@@ -1,0 +1,14 @@
+
+___x_cmd_ws___exe_default_pull(){
+    :
+}
+
+___x_cmd_ws___exe_default_push(){
+    ___x_cmd_ws___exe_default_pull && ___x_cmd_ws___exe_default_push
+}
+
+
+
+___x_cmd_ws___exe_default_sync(){
+    ___x_cmd_ws___exe_default_pull && ___x_cmd_ws___exe_default_push
+}
