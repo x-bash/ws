@@ -1,0 +1,32 @@
+if [ -f "$(___x_cmd_ws_root)/setup.py" ]; then
+    :
+elif [ -f "$(___x_cmd_ws_root)/tsconfig.json" ]; then
+    :
+elif [ -f "$(___x_cmd_ws_root)/package.json" ]; then
+    :
+elif [ -f "$(___x_cmd_ws_root)/gosum" ]; then
+    :
+else
+    printf "%s" "No default script found."
+fi
+
+
+___x_cmd_ws___java_build(){
+    :
+}
+
+___x_cmd_ws___typescript_build(){
+    :
+}
+
+___x_cmd_ws___python_build(){
+    :
+}
+
+___x_cmd_ws___node_build(){
+    :
+}
+
+___x_cmd_ws___go_build(){
+    go build "$@"
+}

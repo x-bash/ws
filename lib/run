@@ -15,8 +15,11 @@ ___x_cmd_ws_run(){
     local RESOURCE_NAME="$1"; shift
     if ___x_cmd_search_path_ . ".x-cmd/ws"; then
         ___x_cmd_exe_workspace "$___X_CMD_SEARCH_PATH_RESULT/.x-cmd/ws" "$RESOURCE_NAME" "$@"
+    elif ___x_cmd_search_path_ . ".x-cmd/$RESOURCE_NAME"; then
+        ___x_cmd_exe_workspace "$___X_CMD_SEARCH_PATH_RESULT/.x-cmd/$RESOURCE_NAME" "$@"
+        return
     else
-        ___x_cmd_ws_exec "$RESOURCE_NAME" "$@"
+        ___x_cmd_ws___exe_default "$RESOURCE_NAME" "$@"
     fi
 }
 
