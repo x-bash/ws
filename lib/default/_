@@ -22,10 +22,10 @@ fi
 
 ___x_cmd_ws___exe_default(){
     case "$1" in
-        P|push)       shift; ___x_cmd_ws___exe_default_push "$@" ;;
-        p|pull)       shift; ___x_cmd_ws___exe_default_pull "$@" ;;
-        s|sync)       shift; ___x_cmd_ws___exe_default_sync "$@" ;;
-        *)          ___x_cmd_ws___exe_default_main "$@" ;;
+        P|push)         shift; ___x_cmd_ws___exe_default_push "$@" ;;
+        p|pull)         shift; ___x_cmd_ws___exe_default_pull "$@" ;;
+        s|sync)         shift; ___x_cmd_ws___exe_default_sync "$@" ;;
+        *)              ___x_cmd_ws___exe_default_main "$@" ;;
     esac
 }
 
