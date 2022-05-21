@@ -1,11 +1,7 @@
 
 ___x_cmd_ws___exe_default_main(){
     local RESOURCE_NAME="$1"; shift
-    local ___X_CMD_WS___EXE_DEFAULT_TMP=
     case "$RESOURCE_NAME" in
-        i)          ___x_cmd_ws___exe_default install       "$@" ;;
-        b)          ___x_cmd_ws___exe_default build         "$@" ;;
-        p)          ___x_cmd_ws___exe_default package       "$@" ;;
         build|install|package|jar|fatjar)
                     . "$___X_CMD_ROOT_MOD/ws/lib/default/java/gradle/$RESOURCE_NAME" "$@" ;;
         *)
