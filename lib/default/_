@@ -1,7 +1,4 @@
 
-
-
-
 if [ -f "$(___x_cmd_ws_root)/setup.py" ]; then
     ___X_CMD_WS___EXE_DEFAULT_TMP=python
 elif [ -f "$(___x_cmd_ws_root)/tsconfig.json" ]; then
