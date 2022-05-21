@@ -1,7 +1,2 @@
 
-
-___x_cmd_ws___install(){
-    :
-}
-
-___x_cmd_ws___install "$@"
+npm install
