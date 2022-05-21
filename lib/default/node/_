@@ -8,7 +8,7 @@ ___x_cmd_ws___exe_default_main(){
         b)          ___x_cmd_ws___exe_default build         "$@" ;;
         p)          ___x_cmd_ws___exe_default package       "$@" ;;
         build|install|package)
-                    . "$___X_CMD_ROOT_MOD/ws/lib/default/node/$RESOURCE_NAME" "$@" ;;
+                    . "$___X_CMD_ROOT_MOD/ws/lib/default/node/$RESOURCE_NAME" ;;
         *)
                     ws:error "Resource Not Found: $RESOURCE_NAME";  return 1
     esac
