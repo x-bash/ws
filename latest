@@ -4,6 +4,12 @@
 xrc:mod ws/lib/main ws/lib/hook ws/lib/util ws/lib/run
 
 # x ws env set
+
+# install: all packages
+# default
+# prepare
+# build
+
 ___x_cmd_ws(){
     case "$1" in
         run)        shift; ___x_cmd_ws_run "$@" ;;
