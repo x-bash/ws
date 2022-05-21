@@ -1,6 +1,6 @@
 
 ___x_cmd_ws___exe_default_pull(){
-    if ___x_cmd_ws___exe_default_is_x_repo; then
+    if ___x_cmd_ws___exe_default___is_x_repo; then
         git push origin "${1:-"$(git rev-parse --abbrev-ref HEAD)"}"
     else
         x yanfa ws push "$@"
@@ -13,7 +13,7 @@ ___x_cmd_ws___exe_default_push(){
         return 1
     fi
 
-    if ___x_cmd_ws___exe_default_is_x_repo; then
+    if ___x_cmd_ws___exe_default___is_x_repo; then
         git push origin "${1:-"$(git rev-parse --abbrev-ref HEAD)"}"
     else
         x yanfa ws push "$@"
@@ -24,7 +24,7 @@ ___x_cmd_ws___exe_default_sync(){
     ___x_cmd_ws___exe_default_pull "$@" && ___x_cmd_ws___exe_default_push "$@"
 }
 
-___x_cmd_ws___exe_default_is_x_repo(){
+___x_cmd_ws___exe_default___is_x_repo(){
     case "$(git config --get-all remote.origin.url)" in
         *gitee.com:x-bash/*.git)        ;;
         *github.com:x-bash/*.git)       ;;
