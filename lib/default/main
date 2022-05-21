@@ -3,7 +3,11 @@ ___x_cmd_ws___exe_default(){
     local RESOURCE_NAME="$1"; shift
     local ___X_CMD_WS___EXE_DEFAULT_TMP=
     case "$RESOURCE_NAME" in
-        build|install|test)
+        test)
+            x test "$@"
+            ;;
+
+        build|install)
             if [ -f "$(___x_cmd_ws_root)/setup.py" ]; then
                 ___X_CMD_WS___EXE_DEFAULT_TMP=python
             elif [ -f "$(___x_cmd_ws_root)/tsconfig.json" ]; then
@@ -18,6 +22,7 @@ ___x_cmd_ws___exe_default(){
             fi
             . "$___X_CMD_ROOT_MOD/ws/lib/default/$___X_CMD_WS___EXE_DEFAULT_TMP/$RESOURCE_NAME" "$@"
             ;;
+
         *)
             ws:error "Resource Not Found: $RESOURCE_NAME";  return 1
     esac
