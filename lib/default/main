@@ -15,7 +15,11 @@ ___x_cmd_ws___exe_default(){
             ___x_cmd_ws___exe_default build "$@"
             ;;
 
-        build|install)
+        p)
+            ___x_cmd_ws___exe_default package "$@"
+            ;;
+
+        build|install|package)
             if [ -f "$(___x_cmd_ws_root)/setup.py" ]; then
                 ___X_CMD_WS___EXE_DEFAULT_TMP=python
             elif [ -f "$(___x_cmd_ws_root)/tsconfig.json" ]; then
