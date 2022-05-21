@@ -14,8 +14,8 @@ ___x_cmd_ws(){
     case "$1" in
         run)        shift; ___x_cmd_ws_run "$@" ;;
         exec)       shift; ___x_cmd_ws_exec "$@" ;;
-        root)       ___x_cmd_ws_root ;;
         env)        shift; ___x_cmd_ws_env "$@" ;;
+        root)       ___x_cmd_ws_root ;;
         "")         ___x_cmd_ws_help ;;
         *)          ___x_cmd_ws_run "$@" ;;
     esac
