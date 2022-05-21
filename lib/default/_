@@ -26,7 +26,11 @@ ___x_cmd_ws___exe_default(){
         push)           shift; ___x_cmd_ws___exe_default_push "$@" ;;
         pull)           shift; ___x_cmd_ws___exe_default_pull "$@" ;;
         sync)           shift; ___x_cmd_ws___exe_default_sync "$@" ;;
-        *)              ___x_cmd_ws___exe_default_main "$@" ;;
+        t|test)         shift; x test "$@" ;;
+        i)              ___x_cmd_ws___exe_default_ install       "$@" ;;
+        b)              ___x_cmd_ws___exe_default_ build         "$@" ;;
+        p)              ___x_cmd_ws___exe_default_ package       "$@" ;;
+        *)              ___x_cmd_ws___exe_default_ "$@" ;;
     esac
 }
 
