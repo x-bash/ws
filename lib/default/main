@@ -16,8 +16,8 @@ ___x_cmd_ws___exe_default___ "$___X_CMD_WS___EXE_DEFAULT_TMP" "$@"
 
 ___x_cmd_ws___exe_default(){
     case "$1" in
-        push)           shift; ___x_cmd_ws___exe_default_push "$@" ;;
-        pull)           shift; ___x_cmd_ws___exe_default_pull "$@" ;;
+        # push)           shift; ___x_cmd_ws___exe_default_push "$@" ;;
+        # pull)           shift; ___x_cmd_ws___exe_default_pull "$@" ;;
         sync)           shift; ___x_cmd_ws___exe_default_sync "$@" ;;
         t|test)         shift; x test "$@" ;;
         i)              ___x_cmd_ws___exe_default_ install       "$@" ;;
