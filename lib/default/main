@@ -9,6 +9,12 @@ ___x_cmd_ws___exe_default(){
         ___X_CMD_WS___EXE_DEFAULT_TMP=node
     elif [ -f "$(___x_cmd_ws_root)/gosum" ]; then
         ___X_CMD_WS___EXE_DEFAULT_TMP=go
+    elif [ -f "$(___x_cmd_ws_root)/pom.xml" ]; then
+        ___X_CMD_WS___EXE_DEFAULT_TMP=java/maven
+    elif [ -f "$(___x_cmd_ws_root)/build.gradle" ]; then
+        ___X_CMD_WS___EXE_DEFAULT_TMP=java/gradle
+    elif [ -f "$(___x_cmd_ws_root)/build.kt" ]; then
+        ___X_CMD_WS___EXE_DEFAULT_TMP=java/gradle/kotlin
     else
         ws:error "No default script found in this environment."
         return 1
