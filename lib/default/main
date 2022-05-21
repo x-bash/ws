@@ -3,8 +3,16 @@ ___x_cmd_ws___exe_default(){
     local RESOURCE_NAME="$1"; shift
     local ___X_CMD_WS___EXE_DEFAULT_TMP=
     case "$RESOURCE_NAME" in
-        test)
+        t|test)
             x test "$@"
+            ;;
+
+        i)
+            ___x_cmd_ws___exe_default install "$@"
+            ;;
+
+        b)
+            ___x_cmd_ws___exe_default build "$@"
             ;;
 
         build|install)
