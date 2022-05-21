@@ -7,17 +7,9 @@ ___x_cmd_ws___exe_default(){
             x test "$@"
             ;;
 
-        i)
-            ___x_cmd_ws___exe_default install "$@"
-            ;;
-
-        b)
-            ___x_cmd_ws___exe_default build "$@"
-            ;;
-
-        p)
-            ___x_cmd_ws___exe_default package "$@"
-            ;;
+        i)  ___x_cmd_ws___exe_default install "$@" ;;
+        b)  ___x_cmd_ws___exe_default build "$@" ;;
+        p)  ___x_cmd_ws___exe_default package "$@" ;;
 
         build|install|package)
             if [ -f "$(___x_cmd_ws_root)/setup.py" ]; then
