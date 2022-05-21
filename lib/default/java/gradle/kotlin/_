@@ -1,4 +1,5 @@
 
+# shellcheck disable=SC1090,SC1091
 ___x_cmd_ws___exe_default_main(){
     local RESOURCE_NAME="$1"; shift
     case "$RESOURCE_NAME" in
