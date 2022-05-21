@@ -1,1 +1,0 @@
-eval "$(cat b.sh)"
