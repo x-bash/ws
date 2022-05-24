@@ -6,12 +6,8 @@ xrc:mod:lib     ws      hook util default/_ run
 # x ws env set
 
 # install: all packages
-# default
-# prepare
-# build
 
 : <<A
-
 x env python=3.9 java=17-openjdk -- java -jar abc
 x env python=3.9 java=18-openjdk
 
@@ -37,7 +33,6 @@ x env esu python
 
 xws var + a b c
 xws var -
-
 A
 
 ___x_cmd_ws(){
