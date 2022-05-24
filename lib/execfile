@@ -1,5 +1,5 @@
 
-___x_cmd_ws_exec(){
+___x_cmd_ws_execfile(){
     local RESOURCE_NAME="$1"; shift
 
     if ___x_cmd_search_path_ . ".x-cmd/$RESOURCE_NAME"; then

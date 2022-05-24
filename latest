@@ -12,12 +12,11 @@ xrc:mod:lib     ws      hook util default/_ run
 
 ___x_cmd_ws(){
     case "$1" in
-        exec)       shift;  ___x_cmd_ws_exec "$@"       ;;
-        env)        shift;  ___x_cmd_ws_env "$@"        ;;
-
         "")                 ___x_cmd_ws_help            ;;                 # default behavior
 
         run)        shift;  ___x_cmd_ws_run "$@"        ;;
+        execfile)   shift;  ___x_cmd_ws_execfile "$@"       ;;
+        env)        shift;  ___x_cmd_ws_env "$@"        ;;
         *)                  ___x_cmd_ws_run "$@"        ;;
     esac
 }
