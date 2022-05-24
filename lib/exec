@@ -3,7 +3,7 @@ ___x_cmd_ws_exec(){
     local RESOURCE_NAME="$1"; shift
 
     if ___x_cmd_search_path_ . ".x-cmd/$RESOURCE_NAME"; then
-        ___x_cmd_exe___workspace "$___X_CMD_SEARCH_PATH_RESULT/.x-cmd/$RESOURCE_NAME" "$@"
+        ___x_cmd_ws___exe_workspace "$___X_CMD_SEARCH_PATH_RESULT/.x-cmd/$RESOURCE_NAME" "$@"
         return
     else
         printf "Workspace Resource Not found: %s\n" "$RESOURCE_NAME" >&2
@@ -13,7 +13,7 @@ ___x_cmd_ws_exec(){
 
 # Section : Find And Execute at .x-cmd folder
 
-___x_cmd_exe___workspace(){
+___x_cmd_ws___exe_workspace(){
     local filepath="${1:?filepath}"
     if [ -L "$filepath" ]; then
         filepath="$(___x_cmd_readlink_recursive "$filepath")"
