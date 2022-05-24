@@ -14,10 +14,10 @@ ___x_cmd_ws(){
     case "$1" in
         "")                 ___x_cmd_ws_help            ;;                 # default behavior
 
-        exec)       shift;  ___x_cmd_ws_exec "$@"        ;;
-        execfile)   shift;  ___x_cmd_ws_execfile "$@"       ;;
+        exec)       shift;  ___x_cmd_ws_exec "$@"       ;;
+        execfile)   shift;  ___x_cmd_ws_execfile "$@"   ;;
         env)        shift;  ___x_cmd_ws_env "$@"        ;;
-        *)                  ___x_cmd_ws_exec "$@"        ;;
+        *)                  ___x_cmd_ws_exec "$@"       ;;
     esac
 }
 
