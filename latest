@@ -16,7 +16,6 @@ xrc:mod:lib     ws      hook util default/_ run
 x env pkg ls
 x env pkg add
 x env pkg del
-x env var ls        # What's for ?
 
 # xws
 xws env pkg ls
