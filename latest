@@ -10,13 +10,29 @@ xrc:mod:lib     ws      hook util default/_ run
 # prepare
 # build
 
+: <<A
+
+# global
+x env pkg ls
+x env pkg add
+x env pkg del
+x env var ls        # What's for ?
+
+# xws
+xws env pkg ls
+xws env var ls
+
+A
+
+
+
 ___x_cmd_ws(){
     case "$1" in
         "")                 ___x_cmd_ws_help            ;;                 # default behavior
 
         exec)       shift;  ___x_cmd_ws_exec "$@"       ;;
         execfile)   shift;  ___x_cmd_ws_execfile "$@"   ;;
-        env)        shift;  ___x_cmd_ws_env "$@"        ;;
+
         *)                  ___x_cmd_ws_exec "$@"       ;;
     esac
 }
