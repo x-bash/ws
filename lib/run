@@ -19,7 +19,7 @@ ___x_cmd_ws_run(){
         ___x_cmd_ws___exe_workspace "$___X_CMD_SEARCH_PATH_RESULT/.x-cmd/$RESOURCE_NAME" "$@"
         return
     else
-        ___x_cmd_ws_run_default
+        ___x_cmd_ws___run_default
         if [ "$___X_CMD_WS___EXE_DEFAULT_TMP_LAST" != "$___X_CMD_WS___EXE_DEFAULT_TMP" ]; then
             ___X_CMD_WS___EXE_DEFAULT_TMP_LAST="$___X_CMD_WS___EXE_DEFAULT_TMP"
             . "$___X_CMD_ROOT_MOD/ws/lib/default/_"
@@ -28,7 +28,7 @@ ___x_cmd_ws_run(){
     fi
 }
 
-___x_cmd_ws_run_default(){
+___x_cmd_ws___run_default(){
     if [ -f "$(___x_cmd_ws_root)/setup.py" ]; then
         ___X_CMD_WS___EXE_DEFAULT_TMP=python
     elif [ -f "$(___x_cmd_ws_root)/tsconfig.json" ]; then
