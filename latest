@@ -17,9 +17,25 @@ x env pkg ls
 x env pkg add
 x env pkg del
 
+x env python=3.9 java=17-openjdk -- java -jar abc
+x env python=3.9 java=18-openjdk
+
+x env scope :abc python=3.9 java=17-openjdk
+java -jar abc
+x env scope :abc recover
+
+(
+    x env python=3.9 java=17-openjdk
+    java -jar abc
+)
+
+x env python=3.9 java=17-openjdk
+x env ws env.config.json
+x env ws python=3.9
+
 # xws
-xws env pkg ls
-xws env var ls
+
+xws var
 
 A
 
