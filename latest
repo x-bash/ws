@@ -15,7 +15,6 @@ ___x_cmd_ws(){
         run)        shift;  ___x_cmd_ws_run "$@"        ;;
         exec)       shift;  ___x_cmd_ws_exec "$@"       ;;
         env)        shift;  ___x_cmd_ws_env "$@"        ;;
-        root)               ___x_cmd_ws_root            ;;
 
         "")                 ___x_cmd_ws_help            ;;                 # default behavior
 
