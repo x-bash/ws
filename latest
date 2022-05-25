@@ -1,7 +1,7 @@
 # Author:       Li Junhao           l@x-cmd.com     # xrc
 # shellcheck    shell=sh
 
-xrc:mod:lib     ws      hook util default/_ run
+xrc:mod:lib     ws      hook util default/_ exec execfile
 
 # x ws env set
 
