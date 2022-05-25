@@ -6,19 +6,43 @@ xrc:mod:lib     ws      hook util default/_ exec
 # x ws env set
 
 # install: all packages
-# default
-# prepare
-# build
+
+: <<A
+x env python=3.9 java=17-openjdk -- java -jar abc
+x env python=3.9 java=18-openjdk
+
+x env scope :abc python=3.9 java=17-openjdk
+java -jar abc
+x env scope :abc recover
+
+(
+    x env python=3.9 java=17-openjdk
+    java -jar abc
+)
+
+x env python=3.9    java=17-openjdk
+x env python=-      java=
+
+x env activate
+x env deactivate
+
+x env use python
+x env esu python
+
+# xws
+
+xws var + a b c
+xws var -
+A
 
 ___x_cmd_ws(){
     case "$1" in
-        exec)       shift;  ___x_cmd_ws_exec "$@"       ;;
-        env)        shift;  ___x_cmd_ws_env "$@"        ;;
-
         "")                 ___x_cmd_ws_help            ;;                 # default behavior
 
-        run)        shift;  ___x_cmd_ws_run "$@"        ;;
-        *)                  ___x_cmd_ws_run "$@"        ;;
+        exec)       shift;  ___x_cmd_ws_exec "$@"       ;;
+        execfile)   shift;  ___x_cmd_ws_execfile "$@"   ;;
+
+        *)                  ___x_cmd_ws_exec "$@"       ;;
     esac
 }
 
